@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uma perguntinha 💗</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}"
+</head>
+<body>
+    <main>
+        <div id="pergunta">
+            <img src="{{ url_for('static', filename='sylveon.png') }}" alt="Sylveon segurando a borda do convite" class="sylveon-inicial">
+            <h1 id="titulo">Tenho uma pergunta para você...💗</h1>
+            <p>Tem alguém (eu) querendo passar um tempo com você. Então tenho uma proposta.<br>Aceita sair comigo?</p>
+            <div class="botoes">
+                <button id="sim">SIM 💗</button>
+                <button id="nao">NÃO 💔</button>
+            </div>
+        </div>
+        <div id="convite" style="display: none;">
+            <h1>Que bom! 💗</h1>
+            <p>Vamos marcar nosso date!</p>
+            <div>
+                <label for="data">Qual dia você está livre?</label>
+                <input type="date" id="data" required>
+            </div>
+            <div>
+                <label for="horario">Qual horário seria melhor?</label>
+                <input type="time" id="horario" required>
+            </div>
+            <button id="continuar">Continuar 😍</button>
+        </div>    
+        <div id="escolha-local" style="display: none;">
+            <h1>Agora vamos escolher o local</h1>
+            <div id="local">
+                <label for="lugar">Onde você gostaria de ir?</label>
+
+                <select name="lugar" id="lugar"> 
+                    <option value="">Escolha uma opção:</option>
+                    <option value="cinema">Cinema 🎬</option>
+                    <option value="restaurante">Restaurante 🍝</option>
+                    <option value="barzinho">Barzinho 🍹</option>
+                    <option value="outra">Outra sugestão 😋</option>
+                </select>
+
+                <input type="text"
+                id="outra-sugestao"
+                placeholder="Qual seria sua sugestão?"
+                style="display: none;">   
+            </div>
+            <button id="confirmar">Confirmar escolha</button>
+            <p id="resumo"></p>
+        </div>
+        <div id="confirmacao" style="display: none;">
+            <img src="{{ url_for('static', filename='sylveon-feliz.png') }}" alt="Sylveon feliz comemorando" class="sylveon-confirmacao">
+            <h1>Temos um date marcado! 😍</h1>
+            <p id="mensagem-final"></p>
+        </div>
+        <div id="recusa" style="display: none;">
+            <img src="{{ url_for('static', filename='sylveon-triste.png') }}" alt="Sylveon triste">
+            <h1>Ahhh... que pena!</h1>
+
+            <h2>Meu coração ficou triste demais...</h2>
+
+            <p>
+                Eu tinha preparado esse convite com tanto carinho!
+                Mas tudo bem, respeito sua decisão.💗
+            </p>
+
+            <p>Quem sabe em uma próxima oportunidade? 😉</p>
+        </div>
+    </main>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>    
+</html>

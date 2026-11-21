@@ -1,0 +1,243 @@
+:root {
+    --cor-fundo: #dcc9ec;
+    --cor-cartao: #fff7fb;
+    --cor-rosa: #f4b2ce;
+    --cor-rosa-escuro: #c85a91;
+    --cor-azul: #a9d9ed;
+    --cor-texto: #55465a;
+    --cor-mensagem: #f8edf8;
+}
+
+label {
+    color: var(--cor-texto);
+}
+
+body {
+    background-color: var(--cor-fundo);
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    background-color: var(--cor-cartao);
+    padding: 30px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    margin-top: 40px;
+}
+
+.botoes {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.botoes button,
+#continuar,
+#confirmar {
+    background-color: var(--cor-rosa);
+    color: var(--cor-texto);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.botoes button:hover,
+#continuar:hover,
+#confirmar:hover {
+    background-color: var(--cor-azul);
+    transform: scale(1.05);
+}
+
+#convite div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+#convite h1,
+#escolha-local h1,
+#pergunta h1,
+#recusa h1,
+#confirmacao h1 {
+    color: var(--cor-rosa-escuro);
+}
+
+#convite input,
+#local select,
+#local input {
+    padding: 10px;
+    border: 1px solid var(--cor-azul);
+    border-radius: 8px;
+    font-size: 15px;
+    width: 180px;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+#convite input:focus,
+#local select:focus,
+#local input:focus {
+    outline: none;
+    border-color: var(--cor-rosa-escuro);
+    box-shadow: 0 0 5px var(--cor-fundo);
+}
+
+#recusa {
+    position: relative;
+    padding-top: 80px;
+    z-index: 1;
+}
+
+#recusa img {
+    width: 220px;
+    height: auto;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+    opacity: 0.25;
+}
+
+#recusa h1,
+#recusa h2,
+#recusa p {
+    position: relative;
+    z-index: 1;
+}
+
+#recusa h2,
+#recusa p {
+    color: var(--cor-texto);
+}
+
+#local {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#continuar,
+#confirmar {
+    margin-top: 20px;
+}
+
+#confirmacao h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+#confirmacao p {
+    background-color: var(--cor-mensagem);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--cor-azul);
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--cor-texto);
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#confirmacao {
+    position: relative;
+    padding-top: 5px;
+    animation: aparecer 0.6s ease;
+}
+
+.sylveon-confirmacao {
+    width: 190px;
+    height: auto;
+    position: absolute;
+    top: -190px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+#pergunta {
+    position: relative;
+    padding-top: 5px;
+}
+
+.sylveon-inicial {
+    width: 220px;
+    height: auto;
+    position: absolute;
+    top: -220px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+#pergunta p {
+    color: var(--cor-texto);
+}
+
+@media (max-width: 600px) {
+
+    main {
+        width: 95%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .sylveon-inicial {
+        width: 190px;
+        top: -180px;
+    }
+
+    #pergunta h1 {
+        font-size: 25px;
+    }
+
+    #pergunta p {
+        font-size: 14px;
+    }
+
+    #convite h1 {
+        font-size: 25px;
+
+    }
+
+    #convite p {
+        font-size: 14px;
+    }
+
+    #convite input {
+        width: 100%;
+        max-width: 220px;
+    }
+
+    #escolha-local h1 {
+        font-size: 25px;
+    }
+}
