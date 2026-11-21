@@ -11,6 +11,10 @@ def inicio():
 @app.route("/salvar_resposta", methods=["POST"])
 def receber_resposta():
     dados = request.get_json()
+
+    if dados.get("modo_teste"):
+        return jsonify({"mensagem": "Resposta de teste recebida!"})
+
     salvar_respostas(
         dados["resposta"],
         dados.get("data"),

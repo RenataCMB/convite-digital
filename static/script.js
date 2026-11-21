@@ -23,6 +23,8 @@ let dataEscolhida = "";
 let horarioEscolhido = "";
 let tamanho = 1;
 
+const modoTeste = new URLSearchParams(window.location.search).get("teste") === "1";
+
 lugar.addEventListener("change", function() {
     if (lugar.value === "outra") {
         outraSugestao.style.display = "block";
@@ -47,7 +49,8 @@ botaoNao.addEventListener("click", async function() {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    resposta: "não"
+                    resposta: "não",
+                    modo_teste: modoTeste
                 })
             });
 
@@ -101,7 +104,8 @@ confirmar.addEventListener("click", async function() {
         resposta: "sim",
         data: dataEscolhida,
         horario: horarioEscolhido,
-        local: localEscolhido
+        local: localEscolhido,
+        modo_teste: modoTeste
     };
 
     try {
