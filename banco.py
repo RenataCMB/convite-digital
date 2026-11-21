@@ -20,3 +20,7 @@ def salvar_respostas(resposta, data=None, horario=None, local=None):
         VALUES (?, ?, ?, ?)
     """, (resposta, data, horario, local))
     conexao.commit()
+
+def consultar_respostas():
+    cursor.execute("SELECT * FROM respostas ORDER BY id DESC")
+    return cursor.fetchall()
